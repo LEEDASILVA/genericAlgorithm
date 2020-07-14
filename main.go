@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"math/rand"
+	"os"
 	"time"
 )
 
@@ -118,7 +119,7 @@ func getBest(population []Organism) Organism {
 func main() {
 	start := time.Now()
 	rand.Seed(time.Now().UTC().UnixNano())
-	target := []byte("To be or not to be that is the question")
+	target := []byte(os.Args[1])
 	population := createPopulation(target)
 
 	found := false
